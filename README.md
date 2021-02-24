@@ -54,3 +54,23 @@ git push origin main
 
 先把远程服务器github上面的文件拉先来，再push 上去。
 
+问题:
+
+$ git push origin main
+
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': 527722032zfl@gmail.com
+Password for 'https://527722032zfl@gmail.com@github.com':
+To https://github.com/ouyangshaogong/JapaneseMaterial.git
+ ! [rejected]        main -> main (non-fast-forward)
+ 
+ 
+error: failed to push some refs to 'https://github.com/ouyangshaogong/JapaneseMaterial.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+
+解决方案：
+git push -u origin main
