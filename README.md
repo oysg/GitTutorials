@@ -59,7 +59,7 @@ git push origin main
 
 问题:
 
-$ git push origin main
+$ git push origin main 报以下错
 
 Logon failed, use ctrl+c to cancel basic credential prompt.
 Username for 'https://github.com': 527722032zfl@gmail.com
@@ -76,4 +76,5 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 
 解决方案：
-git push -u origin main
+git pull --rebase origin main
+git push origin main
