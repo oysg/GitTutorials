@@ -76,5 +76,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 
 解决方案：
+
 git pull --rebase origin main
+
 git push origin main
