@@ -44,12 +44,15 @@ git remote add origin https://github.com/ouyangshaogong/BookManagerSystem.git
 6.将文件push到远端仓库
 git push origin main
 
+问题：
 
 如果执行git remote add origin https://github.com/Flowerowl/stumansys.git，出现错误：fatal: remote origin already exists 
 
 则执行以下语句：git remote rm origin.
 
 再往后执行git remote add origin https://github.com/Flowerowl/stumansys.git 即可
+
+问题：
 
 在执行git push origin main时，报错：　error:failed to push som refs to
 
