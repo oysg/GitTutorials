@@ -29,6 +29,9 @@ cd githubTest
 2.初始化
 git init
 
+2.5 切换到main分支
+ git checkout -b main
+
 3.添加内容
 git add 1.txt
 
