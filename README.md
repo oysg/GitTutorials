@@ -7,19 +7,15 @@ GitTutorials
 ## 案例1:
 
 1.克隆
-
 git clone https://github.com/ouyangshaogong/BookManagerSystem.git
 
 2.添加文件
-
 git add 1.txt
 
 3.提交
-
 git commit -m "1.txt"
 
 4.push文件
-
 git push origin main
 
 ## 案例2
@@ -31,27 +27,23 @@ mkdir githubTest
 cd githubTest
 
 2.初始化
-
 git init
 
 3.添加内容
-
 git add 1.txt
 
 4.将文件提交到暂时区
-
 git commit -m "1.txt"
 
 5.将本地仓库连接到远端仓库
-
 git remote add origin https://github.com/ouyangshaogong/BookManagerSystem.git
 
 6.将文件push到远端仓库
-
 git push origin main
 
 
 如果执行git remote add origin https://github.com/Flowerowl/stumansys.git，出现错误：fatal: remote origin already exists 
+
 则执行以下语句：git remote rm origin.
 
 再往后执行git remote add origin https://github.com/Flowerowl/stumansys.git 即可
