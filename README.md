@@ -86,7 +86,6 @@ git push origin main
 
 
 
-
 git lfs 常用命令
 
 git lfs help // 查看git lfs的帮助
@@ -122,3 +121,4 @@ git lfs ls-files  // 查看当前哪些文件是使用lfs管理的
 git lfs clone https://github.com/kekec/Test.git // 克隆包含Git LFS的远程仓库到本地
 
 git lfs env  // 查看环境信息
+
