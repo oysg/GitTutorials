@@ -1,0 +1,104 @@
+一、项目分支命令
+
+#1.克隆项目命令
+git  clone  net/code/test.git
+#2.查看分支
+git  branch
+#3.创建分支
+git branch 20180701 
+#4.切换分支2018630
+git  checkout  2018630
+git  checkout –b  2018630 
+#5.删除分支
+git branch –d 2018630
+二、移交代码
+
+#1.提交文件到暂存区
+git add  文件目录/文件名
+#2.提交所有文件暂存区
+git add  -A 
+git  add  .
+#3.提交本地分支注解
+git commit  -m  “标签注解”
+#4.将远程代码同步到本地
+git pull origin 2018630
+#5.推送本地仓库分支20180701到remote
+git push origin 20180701
+#6.合并分支，如用冲突通过合并分支时必须使用--no-ff参数，以保留合并历史轨迹
+git merge --no-ff  origin 20170701
+三、回滚版本
+
+需回滚代码时，就需要用到git revert或git reset命令，具体区别如下
+
+1. git revert是用一次新的commit来回滚之前的commit，git reset是直接删除指定的commit。 
+2. 在回滚这一操作上看，效果差不多。但是在日后继续merge以前的老版本时有区别。因为git revert是用一次逆向的commit“中和”之前的提交，因此日后合并老的branch时，
+导致这部分改变不会再次出现，但是git reset是之间把某些commit在某个branch上删除，因而和老的branch再次merge时，这些被回滚的commit应该还会被引入。 
+3. git reset 是把HEAD向后移动了一下，而git revert是HEAD继续前进，只是新的commit的内容和要revert的内容正好相反，能够抵消要被revert的内容。
+1.git reset命令 - 直接删除指定的commit，把你现在这个branch的最新的commit移到你指定的commit
+
+reset命令
+（1）：git reset –mixed：此为默认方式，不带任何参数的git reset，即时这种方式，它回退到某个版本，只保留源码，回退commit和index信息
+（2）：git reset –soft：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可
+（3）：git reset –hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容（这个要特别注意，因为本地代码会修改）
+#1.提交代码时，add了多余的文件，想回退取消，则可以使用命令
+git reset HEAD <file>...
+#2.回退所有内容到上一个版本（本地修改代码不变）
+git reset HEAD^ 
+#3.向前回退到第3个版本
+git reset –soft HEAD~3 
+#4.回退a 这个文件的版本到上一个版本（本地修改代码不变）
+git reset HEAD^ a 
+#5.回退到某个版本（本地修改代码不变） - 首先    git log 查看版本 id然后回退到某个版本
+git reset id
+#6.将本地的状态回退到上个版本（本地修改丢失）
+git reset --hard  HEAD^ 
+#7.将本地的状态回退到某个版本（本地修改丢失）
+git reset --hard  XXXXXXX 
+#8.将本地的状态回退到和远程的一样
+git reset –hard origin/master
+2. git revert命令 - 撤回指定版本的内容并提交一个新的commit，不影响之前提交的内容
+
+# 撤销前一次 commit
+git revert HEAD    
+# 撤销前前一次 commit
+git revert HEAD
+# 撤回指定commit-id#比如：git revert 0818badf6882ea2664a205bc8ef3a85425bb2537
+git revert commit-id 
+#git提示有冲突要解决，继续保留冲突
+git revert --continue
+#取消撤回
+git revert --abort
+四、远程命令
+
+git remote show origin # 查看远程服务器仓库状态
+git remote  add  origin  http://xxx  --连接远程仓库
+git remote  rm  origin     -- 删除远程仓库 
+git  diff  --比较暂存区和工作区差异
+git  diff  --cached   --比较暂存区和历史的差异
+git  diff  master  --比较最新历史区和工作区的差异
+五、其他
+
+git log
+     show commit history of a branch.
+     git log --oneline --number: 每条log只显示一行,显示number条.
+     git log --oneline --graph:可以图形化地表示出分支合并历史.
+     git log branchname可以显示特定分支的log.
+     git log --oneline branch1 ^branch2,可以查看在分支1,却不在分支2中的提交.^表示排除这个分支(Window下可能要给^branch2加上引号).
+  
+     git log --decorate会显示出tag信息.
+     git log --author=[author name] 可以指定作者的提交历史.
+     git log --since --before --until --after 根据提交时间筛选log.
+     --no-merges可以将merge的commits排除在外.
+     git log --grep 根据commit信息过滤log: git log --grep=keywords
+  
+     默认情况下, git log --grep --author是OR的关系,即满足一条即被返回,如果你想让它们是AND的关系,可以加上--all-match的option.
+  
+     git log -S: filter by introduced diff.
+     比如: git log -SmethodName (注意S和后面的词之间没有等号分隔).
+  
+     git log -p: show patch introduced at each commit.
+     每一个提交都是一个快照(snapshot),Git会把每次提交的diff计算出来,作为一个patch显示给你看.
+     另一种方法是git show [SHA].
+  
+     git log --stat: show diffstat of changes introduced at each commit.
+     同样是用来看改动的相对信息的,--stat比-p的输出更简单一些.
