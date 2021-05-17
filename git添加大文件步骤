@@ -20,4 +20,4 @@ git push # 第一次要这样执行，后面再传就git push就行。
 删除远程仓库文件，但本地文件不删除，如bigfile.zip
 git rm bigfile.zip
 git commit -m 'rm bigfile.zip'
-git push
+git push 
