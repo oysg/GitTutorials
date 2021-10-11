@@ -66,8 +66,8 @@ git push origin main
 $ git push origin main 报以下错
 
 Logon failed, use ctrl+c to cancel basic credential prompt.
-Username for 'https://github.com': 527722032zfl@gmail.com
-Password for 'https://527722032zfl@gmail.com@github.com':
+Username for 'https://github.com': 
+Password for '':
 To https://github.com/oysg/JapaneseMaterial.git
  ! [rejected]        main -> main (non-fast-forward)
  
