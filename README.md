@@ -39,7 +39,7 @@ git add 1.txt
 git commit -m "1.txt"
 
 5.将本地仓库连接到远端仓库
-git remote add origin https://github.com/ouyangshaogong/BookManagerSystem.git
+git remote add origin https://github.com/oysg/BookManagerSystem.git
 
 6.将文件push到远端仓库
 git push origin main
@@ -68,11 +68,11 @@ $ git push origin main 报以下错
 Logon failed, use ctrl+c to cancel basic credential prompt.
 Username for 'https://github.com': 527722032zfl@gmail.com
 Password for 'https://527722032zfl@gmail.com@github.com':
-To https://github.com/ouyangshaogong/JapaneseMaterial.git
+To https://github.com/oysg/JapaneseMaterial.git
  ! [rejected]        main -> main (non-fast-forward)
  
  
-error: failed to push some refs to 'https://github.com/ouyangshaogong/JapaneseMaterial.git'
+error: failed to push some refs to 'https://github.com/oysg/JapaneseMaterial.git'
 hint: Updates were rejected because the tip of your current branch is behind
 hint: its remote counterpart. Integrate the remote changes (e.g.
 hint: 'git pull ...') before pushing again.
