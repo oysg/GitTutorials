@@ -7,7 +7,7 @@ GitTutorials
 ## 案例1:
 
 1.克隆
-git clone https://github.com/ouyangshaogong/BookManagerSystem.git
+git clone https://github.com/oysg/BookManagerSystem.git
 
 2.添加文件
 git add 1.txt
